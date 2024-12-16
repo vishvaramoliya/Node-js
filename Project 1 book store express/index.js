@@ -35,7 +35,8 @@ app.post("/updateData", (req, res) => {
         if (e.id == req.body.id) {
             e.id = req.body.id,
                 e.name = req.body.name,
-                e.subject = req.body.subject
+                e.author = req.body.author,
+                e.price = req.body.price
         }
         else {
             e
