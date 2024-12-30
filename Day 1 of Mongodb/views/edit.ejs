@@ -3,15 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update Book</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            color: #4A90E2;
+            margin-bottom: 20px;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-container input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            padding: 12px;
+            background-color: #4A90E2;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #357ABD;
+        }
+    </style>
 </head>
 <body>
-    <form action="/updateData" method="post">
-        <input hidden type="text" value="<%=data.id%>" name="id" >
-        <input type="text" value="<%=data.name%>" placeholder="Enter Book name" name="name">
-        <input  type="text" value="<%=data.subject%>" placeholder="Enter subject" name="subject">
-        <input type="text" value="<%=data.city%>" placeholder="Enter city" name="city">
-        <button type="submit">updateData</button>
-    </form>
+    <div class="form-container">
+        <h1>Update Book</h1>
+        <form action="/updateData" method="post">
+            <input hidden type="text" value="<%=data.id%>" name="id">
+            
+            <label for="book-name">Book Name:</label>
+            <input type="text" id="book-name" value="<%=data.name%>" placeholder="Enter Book name" name="name" required>
+            
+            <label for="author">Author:</label>
+            <input type="text" id="author" value="<%=data.subject%>" placeholder="Enter Author" name="subject" required>
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" value="<%=data.city%>" placeholder="Enter City" name="city" required>
+            
+            <button type="submit">Update Book</button>
+        </form>
+    </div>
 </body>
 </html>
