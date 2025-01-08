@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image:linear-gradient(rgba(0,0,0,0.5) , rgba(0,0,0,0.5)), url(https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/xxlarge/pushpa-the-rule--part-2-et00356724-1729771762.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.movie-container {
+    display: flex;
+    gap: 30px;
+    background-color: #282828;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.poster {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.poster:hover img {
+    transform: scale(1.1);
+}
+
+.status-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+.movie-details {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 0.2s;
+}
+
+.movie-details h1 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating {
+    font-size: 20px;
+    color: #ffcc00;
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    color: #ffcc00;
+    margin-right: 5px;
+}
+
+.votes {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.rate-button {
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.rate-button:hover {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.formats,
+.languages {
+    font-size: 14px;
+    color: #dddddd;
+}
+
+.details {
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+.book-tickets-button {
+    background-color: #e50914;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.book-tickets-button:hover {
+    background-color: #ff0a16;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+</style>
+<body>
+
+    <div class="movie-container">
+        <div class="poster">
+            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/pushpa-the-rule--part-2-et00356724-1729771762.jpg" alt="Pushpa 2 Poster">
+            <button class="status-button">In cinemas</button>
+        </div>
+        <div class="movie-details">
+            <h1>Pushpa 2: The Rule</h1>
+            <div class="rating-section">
+                <span class="rating"><i class="star">★</i> 8.4/10</span>
+                <span class="votes">(429.5K Votes)</span>
+                <button class="rate-button">Rate now</button>
+            </div>
+            <div class="formats">
+                2D, 3D, ICE, 4DX, 4DX 3D, IMAX 2D, IMAX 3D
+            </div>
+            <div class="languages">
+                Telugu, Bengali, Malayalam, Hindi, Kannada, Tamil
+            </div>
+            <div class="details">
+                <span>3h 20m</span> · <span>Action, Thriller</span> · <span>UA16+</span> · <span>5 Dec, 2024</span>
+            </div>
+            <button class="book-tickets-button">Book tickets</button>
+        </div>
+    </div>
+</body>
+</html>
