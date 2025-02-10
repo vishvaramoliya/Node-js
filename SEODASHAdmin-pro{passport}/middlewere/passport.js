@@ -1,9 +1,13 @@
 const passport = require("passport");
 const localSt = require("passport-local").Strategy
-// const schema = require("../model/adminSchema");
 const adminSchema = require("../model/adminSchema");
-// const { checkout } = require("../routes/route");
-const checkAuth = require("../middlewere/checkAuth");
+
+passport.AuthenticateUser = (req , res , next)=>{
+    if(req.isAuthenticated()){
+        res.locals.user = req.user
+    }
+    next();
+}
 
 passport.use(
     "local" , 
@@ -34,6 +38,13 @@ passport.deserializeUser(async(userId , done) =>{
     done(null , admin);
 });
 
+
+passport.checkAuth = (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/");
+};
 
 
 module.exports = passport;
