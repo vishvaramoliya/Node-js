@@ -7,7 +7,7 @@ module.exports.addcat = (req, res)=>{
 }
 
 module.exports.addcategory = async(req , res)=>{
-    req.body.image = req.file.path;
+    req.body.image = req.files.image[0].path;
     console.log(req.body);
     
     await catSchema.create(req.body)

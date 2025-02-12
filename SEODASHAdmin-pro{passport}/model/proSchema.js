@@ -5,7 +5,7 @@ const schema = mongoose.Schema({
         type: String,
         required: true,
     },
-    catImage:{
+    image:{
         type: String,
         required: true,
     },

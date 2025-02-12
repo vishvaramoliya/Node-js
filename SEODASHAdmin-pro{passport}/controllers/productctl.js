@@ -8,7 +8,7 @@ module.exports.addProduct = async (req, res) => {
 }
 
 module.exports.addproduct2 = async (req, res) => {
-    req.body.catImage = req.files.catImage[0].path
+    req.body.image = req.files.image[0].path
     await productSchema.create(req.body).then(() => {
         res.redirect("/product/addProduct");
     })
