@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+
+<style>
+    /* General body styles */
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        background-color: #f8fafc;
+        /* Softer background for better readability */
+        margin: 0;
+        padding: 0;
+        color: #374151;
+        /* Slightly darker text for contrast */
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        /* Smooth scrolling */
+    }
+
+    /* Wrapper styles */
+    .page-wrapper {
+        display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Sidebar styles */
+    .aside {
+        background-color: #1e293b;
+        /* Darker sidebar for contrast */
+        color: #ffffff;
+        min-width: 250px;
+        padding: 20px 10px;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    /* Main content styles */
+    .body-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /* Card styles */
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* Softer shadow for a clean look */
+        margin: 20px 0;
+        background-color: #ffffff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        /* Deeper shadow on hover */
+    }
+
+    .card-body {
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1e3a8a;
+        /* Vibrant blue for titles */
+        margin-bottom: 20px;
+        text-transform: capitalize;
+    }
+
+    /* Table styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        text-align: left;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    table th,
+    table td {
+        padding: 14px 20px;
+        border: 1px solid #e5e7eb;
+        font-size: 16px;
+    }
+
+    table th {
+        background-color: #1e3a8a;
+        /* Deep blue for headers */
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    table td {
+        background-color: #f9fafb;
+        color: #374151;
+    }
+
+    table tr:hover td {
+        background-color: #f3f4f6;
+        /* Slight row highlight on hover */
+    }
+
+    /* table img {
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    } */
+
+    /* Button styles */
+
+
+
+    button {
+        height: 50px;
+        width: 50px;
+        border: none;
+        margin-left: 20px;
+    }
+
+    /* Footer styles */
+    .py-6.px-6.text-center {
+        background-color: #f8fafc;
+        padding: 20px;
+        margin-top: auto;
+        font-size: 14px;
+        color: #6b7280;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .py-6.px-6.text-center a {
+        color: #2563eb;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .py-6.px-6.text-center a:hover {
+        color: #1d4ed8;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .body-wrapper {
+            padding: 15px;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            font-size: 14px;
+        }
+
+    }
+
+    @media (max-width: 480px) {
+        .card-title {
+            font-size: 20px;
+        }
+
+        table th,
+        table td {
+            font-size: 12px;
+            padding: 8px 10px;
+        }
+
+
+        table img {
+            width: 35px;
+            height: 35px;
+        }
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>View Admin</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+    <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <%-include("aside")%>
+            <!--  Sidebar End -->
+            <!--  Main wrapper -->
+            <div class="body-wrapper">
+                <!--  Header Start -->
+                <%- include("header") %>
+                    <!--  Header End -->
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title m-b-0">Admin's Data</h5>
+                                    </div>
+                                    
+                                    <table class="table" border="1">
+                                        <thead>
+                                            <tr>
+                                                <th>Category</th>
+                                                
+                                                <th colspan="2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <%data.map((e,i)=>{%>
+                                                <div>
+                                                    <tr>
+                                                        <td class="d-flex justify-content-center">
+                                                            <img src="/<%=e.image%>" height="50px" width="50px"
+                                                                alt="not found">
+
+                                                                <%=e.catname%>
+
+                                                        </td>
+                                                       
+                                                        <td>
+                                                            <button class="edit">
+                                                                <a href="/editData?id=<%=e.id %>">
+                                                                    <iconify-icon icon="bi:pen-fill"
+                                                                        style="font-size: 18px;"></iconify-icon>
+                                                                </a>
+                                                            </button>
+                                                            
+                                                            <button class="delete">
+                                                                <a href="/deleteData?id=<%=e.id %>">
+                                                                    <iconify-icon icon="bi:trash-fill"
+                                                                        style="font-size: 18px;"></iconify-icon>
+                                                                </a>
+                                                            </button>
+                                                        </td>
+
+                                                    </tr>
+                                                </div>
+
+
+
+                                                <%})%>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-6 px-6 text-center">
+                            <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/"
+                                    target="_blank"
+                                    class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by
+                                <a href="https://themewagon.com/" target="_blank"
+                                    class="pe-1 text-primary text-decoration-underline">ThemeWagon</a></p>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
