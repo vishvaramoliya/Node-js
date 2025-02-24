@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data Form</title>
+   
+</head>
+<body>
+    <form action="/updateData" method="post" enctype="multipart/form-data">
+        <input hidden type="text" value="<%=data.id%>" name="id">
+
+        <h6>Recipe name</h6>
+        <input type="text" value="<%=data.name%>" placeholder="Enter Movie Character" name="name">
+
+        <h6>Recipe ingredeants:</h6>
+        <input type="text" value="<%=data.ingred%>" placeholder="Enter Movie Director" name="ingred">
+
+        <h6>Recipe Image:</h6>
+        <input type="file" name="image">
+        <img src="<%=data.image%>" alt="recipe Image" width="30%">
+
+        <button type="submit">Update Data</button>
+    </form>
+</body>
+</html>

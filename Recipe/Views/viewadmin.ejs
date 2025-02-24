@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%admin.map((e,i)=>{%>
+                <div>
+                    <tr>
+                        
+                        <td>
+                            <%=e.name%>
+                        </td>
+                        <td>
+                            <%=e.phone%>
+                        </td>
+                        <td>
+                            <%=e.email%>
+                        </td>
+                        <td>
+                            <%=e.password%>
+                        </td>
+                        <td>
+                            <button class="edit">
+                                <a href="/editData?id=<%=e.id %>">
+                                    <iconify-icon icon="bi:pen-fill"
+                                        style="font-size: 18px;"></iconify-icon>
+                                </a>
+                            </button>
+                            
+                            <button class="delete">
+                                <a href="/deleteData?id=<%=e.id %>">
+                                    <iconify-icon icon="bi:trash-fill"
+                                        style="font-size: 18px;"></iconify-icon>
+                                </a>
+                            </button>
+                        </td>
+
+                    </tr>
+                </div>
+
+
+
+                <%})%>
+        </tbody>
+    </table>
+</body>
+</html>
