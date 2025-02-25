@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn{
+    background: linear-gradient(to right, #1a472a, #0d2818);
+}
